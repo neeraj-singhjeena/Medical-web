@@ -1,0 +1,530 @@
+:root {
+    --primary-color: #2AD2C1;
+    --secondary-color: #1D2864;
+    --third-color: #6F7F90;
+    --fourth-color: #00FB8A;
+    --primary-color-rgb: 42, 210, 193;
+    --secondary-color-rgb: 29, 40, 100;
+    --third-color-rgb: 111, 127, 144;
+    --fourth-color-rgb: 0, 251, 138;
+    --link-color: #2AD2C1;
+    --link-color-hover: #2AD2C1;
+    --link-color-active: #2AD2C1;
+    --gradient-color-from: #24B7D3;
+    --gradient-color-to: #30EFAD;
+}
+
+.footer {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2c6fb7 100%);
+    color: white;
+    position: relative;
+    margin-top: 100px;
+    padding-top: 80px;
+}
+
+/* Newsletter Overlap Section */
+.newsletter-overlap {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.newsletter-overlap-content {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--gradient-color-to) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 50px;
+    border-radius: 50px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px;
+    transform-style: preserve-3d;
+    animation: floatNewsletter 6s ease-in-out infinite;
+}
+
+@keyframes floatNewsletter {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+.newsletter-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.newsletter-text h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-text p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin: 0;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.newsletter-overlap-form {
+    flex: 1;
+    min-width: 0;
+}
+
+.newsletter-input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 40px;
+    padding: 6px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    border: 2px solid var(--fourth-color);
+}
+
+.newsletter-input-group input {
+    flex: 1;
+    border: none;
+    padding: 18px 25px;
+    border-radius: 40px;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.newsletter-input-group input::placeholder {
+    color: var(--third-color);
+    font-weight: 400;
+}
+
+.newsletter-input-group input.error {
+    border: 2px solid #ff4757;
+}
+
+.newsletter-overlap-btn {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2c6fb7 100%);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(29, 40, 100, 0.3);
+}
+
+.newsletter-overlap-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2c6fb7 0%, var(--secondary-color) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(29, 40, 100, 0.4);
+}
+
+.newsletter-overlap-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.newsletter-error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-overlap-success {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 25px;
+    border: 2px dashed var(--fourth-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    animation: successPulse 2s ease-in-out;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-overlap-success i {
+    color: var(--fourth-color);
+    margin-right: 12px;
+    font-size: 1.3rem;
+}
+
+@keyframes successPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+/* Main Footer Content */
+.footer-main {
+    padding: 60px 0 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* Brand Section */
+.footer-brand {
+    padding-right: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-logo i {
+    font-size: 2rem;
+    margin-right: 12px;
+    color: var(--primary-color);
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(42, 210, 193, 0.3);
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    width: 16px;
+    margin-top: 3px;
+    font-size: 1rem;
+}
+
+.contact-item span {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 968px) {
+    .newsletter-overlap-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+        border-radius: 40px;
+        gap: 20px;
+    }
+
+    .newsletter-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .newsletter-text p {
+        font-size: 1rem;
+    }
+
+    .newsletter-input-group {
+        flex-direction: column;
+        background: transparent;
+        gap: 15px;
+        box-shadow: none;
+        border: none;
+    }
+
+    .newsletter-input-group input,
+    .newsletter-overlap-btn {
+        border-radius: 30px;
+        padding: 16px 25px;
+        width: 100%;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer {
+        padding-top: 100px;
+        margin-top: 120px;
+    }
+
+    .newsletter-overlap {
+        top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletter-overlap-content {
+        padding: 25px;
+        border-radius: 35px;
+        margin: 0 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-brand {
+        padding-right: 0;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-legal {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-overlap-content {
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .newsletter-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .newsletter-overlap-success {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .footer-main {
+        padding: 40px 0 30px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .contact-item i {
+        margin-top: 0;
+    }
+}
+
+/* Smooth transitions */
+.newsletter-overlap-btn,
+.social-link,
+.footer-links a,
+.footer-legal a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility */
+.newsletter-input-group input:focus {
+    box-shadow: 0 0 0 3px rgba(42, 210, 193, 0.3);
+}
+
+.newsletter-overlap-btn:focus,
+.social-link:focus,
+.footer-links a:focus,
+.footer-legal a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Additional floating effect for newsletter */
+.newsletter-overlap-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--gradient-color-to) 100%);
+    border-radius: 60px;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(20px);
+}
+.footer {
+  background: linear-gradient(135deg, rgba(0, 37, 115, 0.9) 0%, rgba(29, 40, 100, 0.9) 100%),
+              url('/images/footer/footer.jpeg') center/cover;
+  color: white;
+  position: relative;
+  margin-top: 100px;
+  padding-top: 80px;
+}
+
+/* Add overlay effect */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #002573;
+  opacity: 0.9;
+  z-index: -1;
+}

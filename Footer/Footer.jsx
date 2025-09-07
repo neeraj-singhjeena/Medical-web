@@ -1,0 +1,197 @@
+import React, { useState } from 'react';
+import './Footer.css';
+
+const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  const validateEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      setError('Email is required');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError('');
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log('Newsletter subscription:', email);
+      setIsSubscribed(true);
+      
+      // Reset form
+      setEmail('');
+      
+      // Reset status after 5 seconds
+      setTimeout(() => setIsSubscribed(false), 5000);
+      
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setTimeout(() => setIsSubscribed(false), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <footer className="footer">
+      {/* Newsletter Overlap Section */}
+      <div className="newsletter-overlap">
+        <div className="container">
+          <div className="newsletter-overlap-content">
+            <div className="newsletter-text">
+              <h3>Stay Updated with SpectraCore</h3>
+              <p>Get exclusive insights and industry updates delivered to your inbox</p>
+            </div>
+            
+            {!isSubscribed ? (
+              <form className="newsletter-overlap-form" onSubmit={handleSubmit}>
+                <div className="newsletter-input-group">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setError('');
+                    }}
+                    disabled={isSubmitting}
+                    className={error ? 'error' : ''}
+                  />
+                  <button 
+                    type="submit" 
+                    className="newsletter-overlap-btn"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <i className="fas fa-spinner fa-spin"></i>
+                    ) : (
+                      <>
+                        <i className="fas fa-paper-plane"></i>
+                        Subscribe
+                      </>
+                    )}
+                  </button>
+                </div>
+                {error && <span className="newsletter-error">{error}</span>}
+              </form>
+            ) : (
+              <div className="newsletter-overlap-success">
+                <i className="fas fa-check-circle"></i>
+                Thank you for subscribing! Check your email for confirmation.
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="footer-main">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-section">
+              <div className="footer-brand">
+                <div className="footer-logo">
+                  <i className="fas fa-microscope"></i>
+                  <span>SpectraCore Analytics</span>
+                </div>
+                <p className="footer-description">
+                  Advanced analytical solutions for chemical innovation and research excellence.
+                </p>
+                <div className="footer-social">
+                  <a href="#" aria-label="Facebook" className="social-link">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter" className="social-link">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" aria-label="LinkedIn" className="social-link">
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" aria-label="Instagram" className="social-link">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h4>Our Services</h4>
+              <ul className="footer-links">
+                <li><a href="#services">Material Characterization</a></li>
+                <li><a href="#services">Process Optimization</a></li>
+                <li><a href="#services">Quality Assurance</a></li>
+                <li><a href="#services">Research & Development</a></li>
+                <li><a href="#services">Consulting Services</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-section">
+              <h4>Quick Links</h4>
+              <ul className="footer-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#expertise">Our Expertise</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-section">
+              <h4>Contact Info</h4>
+              <div className="contact-info">
+                <div className="contact-item">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <span>123 Science Drive, Innovation Park, CA 94305</span>
+                </div>
+                <div className="contact-item">
+                  <i className="fas fa-phone"></i>
+                  <span>(555) 123-4567</span>
+                </div>
+                <div className="contact-item">
+                  <i className="fas fa-envelope"></i>
+                  <span>info@spectracore.com</span>
+                </div>
+                <div className="contact-item">
+                  <i className="fas fa-clock"></i>
+                  <span>Mon - Fri: 9AM - 5PM PST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="footer-bottom-content">
+            <p>&copy; 2024 SpectraCore Analytics. All rights reserved.</p>
+            <div className="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
