@@ -96,7 +96,7 @@ function SocialSidebar() {
             display: flex;
             align-items: center;
             gap: 10px;
-            background: #333;
+            background: linear-gradient(135deg, #24B7D3, #30EFAD);
             color: #fff;
             text-decoration: none;
             padding: 10px 15px;
@@ -114,6 +114,7 @@ function SocialSidebar() {
           .social-hover:hover {
             transform: translateX(0);
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            background: #00FB8A; /* Accent */
           }
 
           .social-hover:hover span {
@@ -121,18 +122,9 @@ function SocialSidebar() {
             margin-left: 5px;
           }
 
-          /* Colors */
-          .whatsapp { background: #25D366; }
-          .facebook { background: #1877F2; }
-          .linkedin { background: #0A66C2; }
-
-          .social-hover:hover.whatsapp { background: #1ebe5d; }
-          .social-hover:hover.facebook { background: #145dbf; }
-          .social-hover:hover.linkedin { background: #084a8f; }
-
-          /* Mobile Sidebar */
+          /* Mobile Sidebar Toggle Button */
           .toggle-btn {
-            background: #0072ff;
+            background: linear-gradient(135deg, #24B7D3, #30EFAD);
             color: white;
             border: none;
             border-radius: 50%;
@@ -146,9 +138,11 @@ function SocialSidebar() {
           }
 
           .toggle-btn:hover {
+            background: #00FB8A; /* Accent */
             transform: scale(1.1);
           }
 
+          /* Mobile Icons */
           .mobile-icons {
             display: flex;
             flex-direction: column;
@@ -163,7 +157,7 @@ function SocialSidebar() {
           }
 
           .social-mobile {
-            background: #333;
+            background: linear-gradient(135deg, #24B7D3, #30EFAD);
             color: white;
             width: 45px;
             height: 45px;
@@ -175,14 +169,10 @@ function SocialSidebar() {
           }
 
           .social-mobile:hover {
+            background: #00FB8A; /* Accent */
             transform: scale(1.2);
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
           }
-
-          /* ✅ Mobile colors */
-          .social-mobile.whatsapp { background: #25D366; }
-          .social-mobile.facebook { background: #1877F2; }
-          .social-mobile.linkedin { background: #0A66C2; }
         `}
       </style>
     </>

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 // src/components/Faq.jsx
 import React, { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+=======
+import React, { useEffect, useState } from "react";
+>>>>>>> upstream/main
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -106,12 +110,23 @@ function Faq() {
               }}
             >
               <div
-                style={{ marginBottom: 12, color: "#6b7280", fontWeight: 700 }}
+                style={{
+                  marginBottom: 12,
+                  color: "#2AD2C1",
+                  fontWeight: 700,
+                  letterSpacing: 1,
+                }}
               >
                 FAQ'S
               </div>
 
-              <h2 style={{ fontWeight: 800, marginBottom: 18 }}>
+              <h2
+                style={{
+                  fontWeight: 800,
+                  marginBottom: 18,
+                  color: "#2AD2C1",
+                }}
+              >
                 Frequently Asked Questions
               </h2>
 
@@ -128,9 +143,13 @@ function Faq() {
                       cursor: "pointer",
                       boxShadow:
                         openIndex === i
-                          ? "0 10px 20px rgba(0,114,255,0.06)"
+                          ? "0 10px 20px rgba(42,210,193,0.3)"
                           : "none",
                       transition: "all 220ms ease",
+                      border:
+                        openIndex === i
+                          ? "1px solid #2AD2C1"
+                          : "1px solid transparent",
                     }}
                     data-aos="fade-right"
                     data-aos-delay={i * 60}
@@ -142,8 +161,10 @@ function Faq() {
                         alignItems: "center",
                       }}
                     >
-                      <div style={{ fontWeight: 600 }}>{f.q}</div>
-                      <div style={{ color: "#1ea44a", fontWeight: 800 }}>
+                      <div style={{ fontWeight: 600, color: "#333" }}>
+                        {f.q}
+                      </div>
+                      <div style={{ color: "#2AD2C1", fontWeight: 800 }}>
                         {openIndex === i ? "−" : "+"}
                       </div>
                     </div>
@@ -175,7 +196,19 @@ function Faq() {
                 boxShadow: "0 12px 30px rgba(18, 26, 40, 0.06)",
               }}
             >
+<<<<<<< HEAD
               <h2 style={{ fontWeight: 800, marginBottom: 6 }}>Contact Us</h2>
+=======
+              <h2
+                style={{
+                  fontWeight: 800,
+                  marginBottom: 6,
+                  color: "#2AD2C1",
+                }}
+              >
+                Need Help?
+              </h2>
+>>>>>>> upstream/main
               <p style={{ marginBottom: 18, color: "#6b7280" }}>
                 Have questions not covered in our FAQ? Send us a message and we'll get back to you shortly.
               </p>
@@ -188,6 +221,7 @@ function Faq() {
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your full name"
+                    style={{ border: "1px solid #2AD2C1" }}
                   />
                 </div>
 
@@ -199,6 +233,7 @@ function Faq() {
                     className="form-control"
                     type="email"
                     placeholder="Enter your email address"
+                    style={{ border: "1px solid #2AD2C1" }}
                   />
                 </div>
 
@@ -209,6 +244,7 @@ function Faq() {
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your phone number"
+                    style={{ border: "1px solid #2AD2C1" }}
                   />
                 </div>
 
@@ -220,6 +256,7 @@ function Faq() {
                     rows="5"
                     className="form-control"
                     placeholder="Tell us about your question or requirement"
+                    style={{ border: "1px solid #2AD2C1" }}
                   />
                 </div>
 
@@ -229,16 +266,25 @@ function Faq() {
                   </div>
                 )}
                 {sent && (
+<<<<<<< HEAD
                   <div style={{ color: "#0f5132", marginBottom: 12 }}>
                     Message sent successfully! ✅
                   </div>
                 )}
 
+=======
+                  <div style={{ color: "#00FB8A", marginBottom: 12 }}>
+                    Message sent (UI only) ✅
+                  </div>
+                )}
+
+                {/* ✅ Teal Gradient Button */}
+>>>>>>> upstream/main
                 <button
                   type="submit"
                   className="btn w-100"
                   style={{
-                    background: "linear-gradient(90deg,#0072ff,#0056d6)",
+                    background: "linear-gradient(90deg,#24B7D3,#30EFAD)",
                     border: "none",
                     color: "#fff",
                     fontWeight: "600",

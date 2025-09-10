@@ -201,10 +201,11 @@ function Navbar() {
         <div className="container-fluid d-flex align-items-center justify-content-between px-3 px-md-4">
           {/* ✅ Brand Name */}
           <a className="navbar-brand fw-bold brand-text" href="#">
-            Spectracore <span>Analytics</span>
+            <span className="brand-teal">Spectracore</span>{" "}
+            <span className="brand-white">Analytics</span>
           </a>
 
-          {/* ✅ Mobile toggle (3 lines white) */}
+          {/* ✅ Mobile toggle */}
           <button
             className="navbar-toggler custom-toggler"
             type="button"
@@ -258,7 +259,7 @@ function Navbar() {
         aria-labelledby="mobileMenuLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title text-info">Spectracore Menu</h5>
+          <h5 className="offcanvas-title text-accent">Spectracore Menu</h5>
           <button
             type="button"
             className="btn-close btn-close-white"
@@ -305,7 +306,7 @@ function Navbar() {
           <div className="modal-content p-3 rounded-3">
             <div className="modal-header border-0">
               <h5
-                className="modal-title fw-bold text-primary"
+                className="modal-title fw-bold modal-title-teal"
                 id="appointmentModalLabel"
               >
                 Book an Appointment
@@ -402,14 +403,12 @@ function Navbar() {
             padding-bottom: 14px;
           }
 
-          .brand-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff !important;
-            letter-spacing: 1px;
+          /* ✅ Brand Colors */
+          .brand-teal {
+            color: #2AD2C1; /* Teal */
           }
-          .brand-text span {
-            color: #00c6ff;
+          .brand-white {
+            color: #fff;
           }
 
           .nav-link {
@@ -420,11 +419,12 @@ function Navbar() {
             transition: color 0.3s ease;
           }
           .nav-link:hover {
-            color: #00c6ff !important;
+            color: #00FB8A !important; /* Bright green accent */
           }
 
+          /* ✅ Gradient Button */
           .contact-btn {
-            background: #007bff;
+            background: linear-gradient(45deg, #24B7D3, #30EFAD);
             color: #fff;
             font-weight: 600;
             font-size: 14px;
@@ -435,12 +435,17 @@ function Navbar() {
             white-space: nowrap;
           }
           .contact-btn:hover {
-            background: #0056b3;
+            background: #00FB8A; /* Accent */
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
           }
 
-          /* ✅ Custom White Toggler (3 lines) */
+          /* ✅ Modal Title */
+          .modal-title-teal {
+            color: #2AD2C1 !important;
+          }
+
+          /* ✅ Custom White Toggler */
           .custom-toggler {
             border: none;
           }
@@ -449,6 +454,11 @@ function Navbar() {
             xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' 
             stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' 
             d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+          }
+
+          /* ✅ Accent text for offcanvas */
+          .text-accent {
+            color: #00FB8A !important;
           }
         `}
       </style>

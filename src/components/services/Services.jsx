@@ -23,20 +23,25 @@ const Services = () => {
   return (
     <section className="services-section py-5">
       <div className="container">
-        <h6 className="text-primary text-center fw-bold" data-aos="fade-up">
+        {/* ✅ Heading */}
+        <h6
+          className="text-center fw-bold"
+          data-aos="fade-up"
+          style={{ color: "#2AD2C1" }}
+        >
           Promising Best Quality Services
         </h6>
         <h2 className="text-center fw-bold mb-5" data-aos="fade-up">
-          Our Amazing Services
+          Our Amazing <span style={{ color: "#00FB8A" }}>Services</span>
         </h2>
 
-        {/* Main card */}
+        {/* ✅ Main Card */}
         <div
           className="services-card position-relative d-flex align-items-center justify-content-between px-5 py-4"
           data-aos="zoom-in"
         >
           {/* Left services */}
-          <div className="service-list">
+          <div className="service-list left-services">
             <div
               className="service-item d-flex align-items-center mb-4"
               data-aos="fade-right"
@@ -86,7 +91,7 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Doctor Image (hide on mobile) */}
+          {/* ✅ Doctor Image in Center */}
           <div
             className="doctor-wrapper position-absolute top-50 start-50 translate-middle"
             data-aos="zoom-in-up"
@@ -95,7 +100,7 @@ const Services = () => {
           </div>
 
           {/* Right services */}
-          <div className="service-list text-end">
+          <div className="service-list text-end right-services">
             <div
               className="service-item d-flex align-items-center mb-4 justify-content-end"
               data-aos="fade-left"
@@ -146,81 +151,80 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Styles */}
-        <style>
-          {`
-            .services-card {
-              background: linear-gradient(135deg, #0072ff, #00c6ff);
-              border-radius: 20px;
-              box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-              color: #fff;
-              overflow: hidden;
-              padding: 75px 50px 45px 50px; 
-            }
-            .service-item h5 {
-              margin: 0;
-              color: #fff;
-            }
-            .service-item p {
-              margin: 0;
-              font-size: 14px;
-              color: #f0f0f0;
-              max-width: 240px;
-            }
-            .icon-box {
-              width: 55px;
-              height: 55px;
-              border-radius: 12px;
-              background: rgba(255,255,255,0.15);
-              color: #fff;
-              font-size: 22px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              transition: transform 0.3s ease;
-            }
-            .icon-box:hover {
-              transform: scale(1.1);
-            }
+      {/* Styles */}
+      <style>
+        {`
+          .services-card {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            color: #fff;
+            overflow: hidden;
+            padding: 75px 50px 45px 50px; 
+          }
+          .service-item h5 {
+            margin: 0;
+            color: #fff;
+          }
+          .service-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #f0f0f0;
+            max-width: 240px;
+          }
+          .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+          }
+          .icon-box:hover {
+            transform: scale(1.1);
+          }
 
             .doctor-wrapper { z-index: 10; }
             .doctor-img { max-height: 450px; object-fit: contain; }
 
-            /* ✅ Responsive Fix */
-            @media (max-width: 991px) {
-              .services-card {
-                flex-direction: column !important;
-                text-align: center;
-                padding: 40px 20px;
-              }
-              .service-list {
-                width: 100%;
-                text-align: center !important;
-              }
+          /* ✅ Responsive Fix */
+          @media (max-width: 991px) {
+            .services-card {
+              flex-direction: column !important;
+              text-align: center;
+              padding: 40px 20px;
             }
+            .service-list {
+              width: 100%;
+              text-align: center !important;
+            }
+          }
 
-            /* ✅ Hide Doctor Image and stack icons/text on Mobile */
-            @media (max-width: 768px) {
-              .doctor-wrapper {
-                display: none !important;
-              }
-              .service-item {
-                flex-direction: column !important;
-                justify-content: center !important;
-                align-items: center !important;
-                text-align: center !important;
-                margin-bottom: 25px;
-              }
-              .service-item .icon-box {
-                margin-bottom: 12px;
-              }
-              .service-item p {
-                max-width: 100% !important;
-              }
+          /* ✅ Hide Doctor Image and stack icons/text on Mobile */
+          @media (max-width: 768px) {
+            .doctor-wrapper {
+              display: none !important;
             }
-          `}
-        </style>
-      </div>
+            .service-item {
+              flex-direction: column !important;
+              justify-content: center !important;
+              align-items: center !important;
+              text-align: center !important;
+              margin-bottom: 25px;
+            }
+            .service-item .icon-box {
+              margin-bottom: 12px;
+            }
+            .service-item p {
+              max-width: 100% !important;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 };
