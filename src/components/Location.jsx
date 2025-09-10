@@ -25,19 +25,23 @@ function Location() {
         <div className="row align-items-center">
           {/* Left Side - Details */}
           <div className="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+ HEAD
+            <h2 className="fw-bold mb-3" style={{ color: "#0072ff" }}>
+              Get In Touch
+
             <h2 className="fw-bold mb-3" style={{ color: "#2AD2C1" }}>
               Our Location
+upstream/main
             </h2>
             <p className="lead text-muted mb-4">
-              At <strong>SpectraCore Analytics</strong>, we are committed to
-              delivering world-class solutions in AI, Data Analytics, and Cloud.
+              At <strong>SpectraCore Analytics</strong> we are committed to delivering world-class solutions in Research Consulting, Analytical Science, and Process Engineering.
               <br />
               <br />
-              📍 <strong>Office Address:</strong> Punjab, Hoshiarpur, India
+              📍 <strong>Office Address:</strong> N/A
               <br />
-              📧 <strong>Email:</strong> neeraj2005jeena@gmail.com
+              📧 <strong>Email:</strong> info@spectracoreanalytics.com
               <br />
-              ☎️ <strong>Phone:</strong> +91 98765 43210
+              ☎️ <strong>Phone:</strong> +91 9********
             </p>
 
             {/* ✅ Button (Teal → Green Gradient) */}
