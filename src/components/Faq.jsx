@@ -1,8 +1,25 @@
+<<<<<<< HEAD
+// src/components/Faq.jsx
+import React, { useEffect, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+=======
 import React, { useEffect, useState } from "react";
+>>>>>>> upstream/main
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Faq() {
+  const form = useRef();
+  const [openIndex, setOpenIndex] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
@@ -26,7 +43,7 @@ function Faq() {
     },
     {
       q: "Can I request customized solutions?",
-      a: "Absolutely—every project is tailored to client needs, whether it’s a one-time audit, long-term R&D support, or publication-ready reports.",
+      a: "Absolutely—every project is tailored to client needs, whether it's a one-time audit, long-term R&D support, or publication-ready reports.",
     },
     {
       q: "What is your typical project workflow?",
@@ -38,38 +55,44 @@ function Faq() {
     },
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState("");
-
   function toggle(i) {
     setOpenIndex(openIndex === i ? null : i);
   }
 
   function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     setError("");
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+    
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setError("Please fill Name, Email and Your Query.");
       return;
     }
 
-    // UI-only success
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setForm({ name: "", email: "", phone: "", message: "" });
-    }, 2200);
+    // Send email using EmailJS
+    emailjs
+      .sendForm(
+        "service_i333sph", // Your Service ID
+        "template_pb4hbyk", // Your Template ID
+        form.current,
+        { publicKey: "FXZ9pkNkJxj6TGcv7" } // Your Public Key
+      )
+      .then(
+        () => {
+          setSent(true);
+          setTimeout(() => {
+            setSent(false);
+            setFormData({ name: "", email: "", phone: "", message: "" });
+          }, 3000);
+        },
+        (error) => {
+          console.error(error);
+          setError("Something went wrong. Please try again.");
+        }
+      );
   }
 
   return (
@@ -173,6 +196,9 @@ function Faq() {
                 boxShadow: "0 12px 30px rgba(18, 26, 40, 0.06)",
               }}
             >
+<<<<<<< HEAD
+              <h2 style={{ fontWeight: 800, marginBottom: 6 }}>Contact Us</h2>
+=======
               <h2
                 style={{
                   fontWeight: 800,
@@ -182,15 +208,16 @@ function Faq() {
               >
                 Need Help?
               </h2>
+>>>>>>> upstream/main
               <p style={{ marginBottom: 18, color: "#6b7280" }}>
-                Send us a message and we'll get back to you shortly.
+                Have questions not covered in our FAQ? Send us a message and we'll get back to you shortly.
               </p>
 
-              <form onSubmit={handleSubmit}>
+              <form ref={form} onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <input
                     name="name"
-                    value={form.name}
+                    value={formData.name}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your full name"
@@ -201,7 +228,7 @@ function Faq() {
                 <div className="mb-3">
                   <input
                     name="email"
-                    value={form.email}
+                    value={formData.email}
                     onChange={handleChange}
                     className="form-control"
                     type="email"
@@ -213,7 +240,7 @@ function Faq() {
                 <div className="mb-3">
                   <input
                     name="phone"
-                    value={form.phone}
+                    value={formData.phone}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your phone number"
@@ -224,7 +251,7 @@ function Faq() {
                 <div className="mb-3">
                   <textarea
                     name="message"
-                    value={form.message}
+                    value={formData.message}
                     onChange={handleChange}
                     rows="5"
                     className="form-control"
@@ -239,12 +266,20 @@ function Faq() {
                   </div>
                 )}
                 {sent && (
+<<<<<<< HEAD
+                  <div style={{ color: "#0f5132", marginBottom: 12 }}>
+                    Message sent successfully! ✅
+                  </div>
+                )}
+
+=======
                   <div style={{ color: "#00FB8A", marginBottom: 12 }}>
                     Message sent (UI only) ✅
                   </div>
                 )}
 
                 {/* ✅ Teal Gradient Button */}
+>>>>>>> upstream/main
                 <button
                   type="submit"
                   className="btn w-100"

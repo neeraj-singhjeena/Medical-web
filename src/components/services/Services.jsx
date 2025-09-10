@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import {
   FaMicroscope,
-  FaUserMd,
-  FaCogs,
-  FaStopwatch,
+  FaFlask,
+  FaLaptopCode,
+  FaIndustry,
   FaChartLine,
-  FaCheckCircle,
+  FaFileAlt
 } from "react-icons/fa";
 import doctorImg from "../../assets/images/doctor.png";
 import AOS from "aos";
@@ -50,35 +50,43 @@ const Services = () => {
                 <FaMicroscope />
               </div>
               <div>
-                <h5 className="fw-bold">Accurate Test Results</h5>
+                <h5 className="fw-bold">Research & Consulting</h5>
                 <p>
-                  Delivering precise, reliable results for confident
-                  decision-making.
+                  Customized solutions for academic research and industrial R&D, 
+                  including experimental design and methodology optimization.
                 </p>
               </div>
             </div>
             <div
               className="service-item d-flex align-items-center mb-4"
               data-aos="fade-right"
+              data-aos-delay="100"
             >
               <div className="icon-box me-3">
-                <FaUserMd />
+                <FaFlask />
               </div>
               <div>
-                <h5 className="fw-bold">Certified Lab Experts</h5>
-                <p>Trusted specialists with proven expertise.</p>
+                <h5 className="fw-bold">Analytical Testing</h5>
+                <p>
+                  Spectroscopy, chromatography, structural, and thermal studies 
+                  with publication-ready reports.
+                </p>
               </div>
             </div>
             <div
               className="service-item d-flex align-items-center"
               data-aos="fade-right"
+              data-aos-delay="200"
             >
               <div className="icon-box me-3">
-                <FaCogs />
+                <FaLaptopCode />
               </div>
               <div>
-                <h5 className="fw-bold">Advanced Technology</h5>
-                <p>Cutting-edge equipment for accuracy and speed.</p>
+                <h5 className="fw-bold">Computational Chemistry</h5>
+                <p>
+                  Molecular simulations, quantum calculations, and predictive 
+                  modeling for materials and processes.
+                </p>
               </div>
             </div>
           </div>
@@ -98,20 +106,27 @@ const Services = () => {
               data-aos="fade-left"
             >
               <div>
-                <h5 className="fw-bold">Fast Turnaround Time</h5>
-                <p>Quick and reliable processing every time.</p>
+                <h5 className="fw-bold">Process Scale-Up</h5>
+                <p>
+                  Lab-to-plant process optimization, reactor design, safety studies, 
+                  and pilot-scale validation.
+                </p>
               </div>
               <div className="icon-box ms-3">
-                <FaStopwatch />
+                <FaIndustry />
               </div>
             </div>
             <div
               className="service-item d-flex align-items-center mb-4 justify-content-end"
               data-aos="fade-left"
+              data-aos-delay="100"
             >
               <div>
-                <h5 className="fw-bold">Reliable Data Analysis</h5>
-                <p>Accurate insights for better decisions.</p>
+                <h5 className="fw-bold">Data Analysis</h5>
+                <p>
+                  Processing and interpretation of complex datasets with dashboards, 
+                  graphs, and statistical insights.
+                </p>
               </div>
               <div className="icon-box ms-3">
                 <FaChartLine />
@@ -120,100 +135,76 @@ const Services = () => {
             <div
               className="service-item d-flex align-items-center justify-content-end"
               data-aos="fade-left"
+              data-aos-delay="200"
             >
               <div>
-                <h5 className="fw-bold">Trusted By Professionals</h5>
-                <p>Preferred by top healthcare providers.</p>
+                <h5 className="fw-bold">Publication Support</h5>
+                <p>
+                  Manuscripts, patents, grant proposals, and conference materials 
+                  with clear, accurate scientific writing.
+                </p>
               </div>
               <div className="icon-box ms-3">
-                <FaCheckCircle />
+                <FaFileAlt />
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ✅ Styles */}
+      {/* Styles */}
       <style>
         {`
           .services-card {
-            background: linear-gradient(to right, #fff 50%, #24B7D3 50%, #30EFAD 100%);
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            color: #fff;
             overflow: hidden;
             padding: 75px 50px 45px 50px; 
           }
-
-          /* Left side (white background → black text) */
-          .left-services h5, 
-          .left-services p {
-            color: #000;
-          }
-
-          /* Right side (gradient background → white text) */
-          .right-services h5, 
-          .right-services p {
+          .service-item h5 {
+            margin: 0;
             color: #fff;
           }
-
+          .service-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #f0f0f0;
+            max-width: 240px;
+          }
           .icon-box {
             width: 55px;
             height: 55px;
             border-radius: 12px;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
             font-size: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.3s ease;
           }
-
-          .right-services .icon-box {
-            background: rgba(255,255,255,0.15);
-            color: #fff;
-            border: 2px solid #00FB8A; /* Accent border */
-          }
-
-          .left-services .icon-box {
-            background: rgba(0,0,0,0.08);
-            color: #2AD2C1; /* Primary teal */
-          }
-
           .icon-box:hover {
             transform: scale(1.1);
           }
 
-          .doctor-wrapper { z-index: 10; }
-          .doctor-img { max-height: 450px; object-fit: contain; }
+            .doctor-wrapper { z-index: 10; }
+            .doctor-img { max-height: 450px; object-fit: contain; }
 
-          /* ✅ Mobile/Tablet fix */
+          /* ✅ Responsive Fix */
           @media (max-width: 991px) {
             .services-card {
               flex-direction: column !important;
               text-align: center;
               padding: 40px 20px;
-              background: linear-gradient(135deg, #24B7D3, #30EFAD); /* ✅ Full gradient */
             }
-
-            .left-services h5, 
-            .left-services p,
-            .right-services h5, 
-            .right-services p {
-              color: #fff !important; /* ✅ White text */
-            }
-
-            .left-services .icon-box,
-            .right-services .icon-box {
-              background: rgba(255,255,255,0.15);
-              color: #fff;
-              border: 2px solid #00FB8A;
-            }
-
-            .left-services, .right-services {
+            .service-list {
               width: 100%;
               text-align: center !important;
             }
           }
 
+          /* ✅ Hide Doctor Image and stack icons/text on Mobile */
           @media (max-width: 768px) {
             .doctor-wrapper {
               display: none !important;
@@ -227,6 +218,9 @@ const Services = () => {
             }
             .service-item .icon-box {
               margin-bottom: 12px;
+            }
+            .service-item p {
+              max-width: 100% !important;
             }
           }
         `}
