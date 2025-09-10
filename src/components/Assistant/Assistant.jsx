@@ -15,70 +15,70 @@ const Assistant = () => {
       response: "Hello! I'm your business assistant. How can I help you with our services and industries today?",
       options: ['Services', 'Industries', 'Contact', 'About Us']
     },
-    
+
     // Industries
     chemical: {
       patterns: ['chemical', 'chemical industry', 'chemical services', 'chemical solutions'],
       response: "**Chemical Industry Services:**\n\n• Chemical process optimization\n• Quality control and testing\n• Regulatory compliance\n• Material safety analysis\n• Environmental impact assessment\n\nWhich specific chemical service are you interested in?",
       options: ['Process Optimization', 'Quality Control', 'Regulatory Compliance', 'All Services']
     },
-    
+
     construction: {
       patterns: ['construction', 'construction industry', 'building', 'construction services'],
       response: "**Construction Industry Solutions:**\n\n• Project management consulting\n• Supply chain optimization\n• Safety compliance\n• Quality assurance\n• Cost estimation and analysis\n\nWhat construction service do you need?",
       options: ['Project Management', 'Supply Chain', 'Safety Compliance', 'Quality Assurance']
     },
-    
+
     food: {
       patterns: ['food', 'food industry', 'food services', 'food safety', 'food processing'],
       response: "**Food Industry Expertise:**\n\n• Food safety compliance\n• Quality control systems\n• Supply chain management\n• Process optimization\n• Regulatory guidance\n\nWhich food industry service interests you?",
       options: ['Food Safety', 'Quality Control', 'Supply Chain', 'Process Optimization']
     },
-    
+
     government: {
       patterns: ['government', 'public sector', 'government services', 'municipal', 'federal'],
       response: "**Government Sector Services:**\n\n• Public policy consulting\n• Regulatory compliance\n• Data management solutions\n• Process optimization\n• Audit and accountability systems\n\nWhat government service do you require?",
       options: ['Policy Consulting', 'Regulatory Compliance', 'Data Management', 'Process Optimization']
     },
-    
+
     // Services
     data: {
       patterns: ['data', 'data analytics', 'data analysis', 'big data', 'data services'],
       response: "**Data Analytics Services:**\n\n• Business intelligence solutions\n• Predictive analytics\n• Data visualization\n• Machine learning implementation\n• Custom reporting systems\n\nWhat type of data solution do you need?",
       options: ['Business Intelligence', 'Predictive Analytics', 'Data Visualization', 'All Services']
     },
-    
+
     ai: {
       patterns: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'ai services'],
       response: "**AI & Machine Learning Services:**\n\n• Custom AI solutions\n• Machine learning models\n• Natural language processing\n• Computer vision systems\n• AI integration services\n\nWhich AI service are you looking for?",
       options: ['Custom AI Solutions', 'ML Models', 'NLP Services', 'Computer Vision']
     },
-    
+
     cloud: {
       patterns: ['cloud', 'cloud services', 'cloud computing', 'cloud solutions', 'aws', 'azure'],
       response: "**Cloud Services:**\n\n• Cloud migration\n• Infrastructure setup\n• Security implementation\n• Cost optimization\n• 24/7 monitoring and support\n\nWhat cloud service do you need?",
       options: ['Cloud Migration', 'Infrastructure Setup', 'Security', 'Cost Optimization']
     },
-    
+
     consulting: {
       patterns: ['consulting', 'consultation', 'business consulting', 'professional services'],
       response: "**Consulting Services:**\n\n• Strategic planning\n• Business process optimization\n• Technology implementation\n• Change management\n• Performance improvement\n\nWhat type of consulting do you require?",
       options: ['Strategic Planning', 'Process Optimization', 'Technology Implementation', 'All Services']
     },
-    
+
     // General company info
     about: {
       patterns: ['about', 'about us', 'company', 'who are you', 'what do you do'],
       response: "We are a professional services company offering:\n\n• **Industry Solutions**: Chemical, Construction, Food, Government\n• **Services**: Data Analytics, AI, Cloud, Consulting\n• **Expertise**: Years of experience across multiple sectors\n\nWhat would you like to know more about?",
       options: ['Industries', 'Services', 'Contact', 'Case Studies']
     },
-    
+
     contact: {
       patterns: ['contact', 'get in touch', 'email', 'phone', 'address', 'location'],
       response: "**Contact Information:**\n\n📞 Phone: (555) 123-4567\n📧 Email: info@company.com\n🏢 Address: 123 Business District, City, State\n⏰ Hours: Mon-Fri 9AM-5PM\n\nWould you like to schedule a consultation?",
       options: ['Schedule Meeting', 'Request Quote', 'Call Now', 'Email Us']
     },
-    
+
     default: {
       response: "I'm not sure I understand. Could you please rephrase your question or choose from the options below?",
       options: ['Services', 'Industries', 'Contact', 'About Us']
@@ -113,13 +113,13 @@ const Assistant = () => {
 
   const findResponse = (message) => {
     const lowerMessage = message.toLowerCase();
-    
+
     for (const [key, data] of Object.entries(knowledgeBase)) {
       if (data.patterns && data.patterns.some(pattern => lowerMessage.includes(pattern))) {
         return data;
       }
     }
-    
+
     return knowledgeBase.default;
   };
 
@@ -173,7 +173,7 @@ const Assistant = () => {
     // Find appropriate response for the selected option
     setTimeout(() => {
       let response = knowledgeBase.default;
-      
+
       // Map options to responses based on your business context
       if (option.includes('Chemical') || option.includes('Process') || option.includes('Quality') || option.includes('Regulatory')) {
         response = knowledgeBase.chemical;
@@ -194,7 +194,7 @@ const Assistant = () => {
       } else if (option.includes('Contact') || option.includes('Schedule') || option.includes('Call')) {
         response = knowledgeBase.contact;
       }
-      
+
       handleResponse(response);
     }, 800);
   };
@@ -207,13 +207,18 @@ const Assistant = () => {
 
   return (
     <>
+
+
       {/* Assistant Button */}
-      <button 
+      <button
         className="assistant-button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Open chat assistant"
       >
-        <i className={`fas ${isOpen ? 'fa-times' : 'fa-comments'}`}></i>
+        <img
+          src="/images/Footer/Assistant/robot.png"
+          alt="Chat Assistant"
+        />
       </button>
 
       {/* Chat Window */}
@@ -222,14 +227,18 @@ const Assistant = () => {
           <div className="assistant-header">
             <div className="assistant-info">
               <div className="assistant-avatar">
-                <i className="fas fa-headset"></i>
+                <img
+                  src="/images/Footer/Assistant/robot.png"
+                  alt="Assistant Robot"
+                  style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
+                />
               </div>
               <div>
-                <h3>Business Assistant</h3>
+                <h3>SpectraCore Analytics</h3>
                 <p>Here to help with our services</p>
               </div>
             </div>
-            <button 
+            <button
               className="close-assistant"
               onClick={() => setIsOpen(false)}
               aria-label="Close chat"
@@ -272,7 +281,7 @@ const Assistant = () => {
                 </div>
               </div>
             ))}
-            
+
             {isTyping && (
               <div className="message bot">
                 <div className="message-content">
@@ -284,7 +293,7 @@ const Assistant = () => {
                 </div>
               </div>
             )}
-            
+
             <div ref={messagesEndRef} />
           </div>
 
@@ -314,7 +323,7 @@ const Assistant = () => {
               placeholder="Ask about our services, industries, or contact info..."
               disabled={isTyping}
             />
-            <button 
+            <button
               onClick={handleSendMessage}
               disabled={!inputMessage.trim() || isTyping}
             >

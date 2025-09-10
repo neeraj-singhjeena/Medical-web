@@ -168,7 +168,6 @@ import Home from "./components/Home/Home";
 import Services from "./components/services/Services";
 import About from "./components/About";
 import Location from "./components/Location";
-import Contact from "./components/Contact/Contact";
 import Faq from "./components/Faq";
 // Sidebar & Footer
 import SocialSidebar from "./components/SocialSidebar";
@@ -223,9 +222,7 @@ function App() {
         <section id="services" className="normal-section" data-aos="fade-up">
           <Services />
         </section>
-        <section id="contact" className="normal-section" data-aos="fade-up">
-          <Contact />
-        </section>
+        
         <section id="contact" className="normal-section" data-aos="fade-up">
           <Faq />
         </section>
