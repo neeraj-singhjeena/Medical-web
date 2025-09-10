@@ -13,12 +13,12 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!email.trim()) {
       setError('Email is required');
       return;
     }
-    
+
     if (!validateEmail(email)) {
       setError('Please enter a valid email address');
       return;
@@ -26,20 +26,20 @@ const Footer = () => {
 
     setIsSubmitting(true);
     setError('');
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       console.log('Newsletter subscription:', email);
       setIsSubscribed(true);
-      
+
       // Reset form
       setEmail('');
-      
+
       // Reset status after 5 seconds
       setTimeout(() => setIsSubscribed(false), 5000);
-      
+
     } catch (error) {
       console.error('Subscription error:', error);
       setTimeout(() => setIsSubscribed(false), 3000);
@@ -58,7 +58,7 @@ const Footer = () => {
               <h3>Stay Updated with SpectraCore</h3>
               <p>Get exclusive insights and industry updates delivered to your inbox</p>
             </div>
-            
+
             {!isSubscribed ? (
               <form className="newsletter-overlap-form" onSubmit={handleSubmit}>
                 <div className="newsletter-input-group">
@@ -73,8 +73,8 @@ const Footer = () => {
                     disabled={isSubmitting}
                     className={error ? 'error' : ''}
                   />
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="newsletter-overlap-btn"
                     disabled={isSubmitting}
                   >
@@ -113,23 +113,10 @@ const Footer = () => {
                 <p className="footer-description">
                   Advanced analytical solutions for chemical innovation and research excellence.
                 </p>
-                <div className="footer-social">
-                  <a href="#" aria-label="Facebook" className="social-link">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#" aria-label="Twitter" className="social-link">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="#" aria-label="LinkedIn" className="social-link">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                  <a href="#" aria-label="Instagram" className="social-link">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </div>
+
               </div>
             </div>
-            
+
             <div className="footer-section">
               <h4>Our Services</h4>
               <ul className="footer-links">
@@ -140,7 +127,7 @@ const Footer = () => {
                 <li><a href="#services">Consulting Services</a></li>
               </ul>
             </div>
-            
+
             <div className="footer-section">
               <h4>Quick Links</h4>
               <ul className="footer-links">
@@ -151,7 +138,7 @@ const Footer = () => {
                 <li><a href="#contact">Contact Us</a></li>
               </ul>
             </div>
-            
+
             <div className="footer-section">
               <h4>Contact Info</h4>
               <div className="contact-info">
