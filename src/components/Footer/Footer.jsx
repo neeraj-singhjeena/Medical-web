@@ -101,27 +101,30 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-     <div className="footer-main">
-  <div className="container">
-    <div className="footer-content">
-      <div className="footer-section">
-        <div className="footer-brand">
-          <div className="footer-logo">
-            <i className="fas fa-microscope"></i>
-            <span className="brand-name">
-              <span className="spectracore">SpectraCore</span>
-              <span className="analytics">Analytics</span>
-            </span>
-          </div>
-          <strong>Dr. Tanu Mittal</strong>
-          <p className="footer-description">
-            Advanced analytical solutions for chemical innovation and research excellence.
-          </p>
-          <img src="./src/assets/images/msme.png" alt="MSME Registered" className="msme-logo" />
-        </div>
-      </div>
-    
-  
+      <div className="footer-main">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-section">
+              <div className="footer-brand">
+                <div className="footer-logo">
+                  <i className="fas fa-microscope"></i>
+                  <span className="brand-name">
+                    <span className="spectracore">SpectraCore</span>
+                    <span className="analytics">Analytics</span>
+                  </span>
+                </div>
+                <strong>Dr. Tanu Mittal</strong>
+                <p className="footer-description">
+                  Advanced analytical solutions for chemical innovation and research excellence.
+                </p>
+                <img src="../src/assets/images/msme.png" alt="MSME Registered" className="msme-logo" />
+                <div>UDYAM Registration: <b>UDYAM-UP-43-0156548</b>
+
+                </div>
+              </div>
+            </div>
+
+
             <div className="footer-section">
               <h4>Our Services</h4>
               <ul className="footer-links">
@@ -150,13 +153,13 @@ const Footer = () => {
               <div className="contact-info">
                 <div className="contact-item">
                   <i className="fas fa-map-marker-alt"></i>
-                 
-                 <div><strong>Dr .Tanu Mittal</strong><p>Main Unit H2, Old SBRA,Indian Institute of Technology Kanpur
+
+                  <div><strong>Dr .Tanu Mittal</strong><p>Main Unit H2, Old SBRA,Indian Institute of Technology Kanpur
                     Kanpur, Uttar Pradesh 208016
                     India .</p>
-                  </div> 
-                  
-                  
+                  </div>
+
+
 
                 </div>
                 <div className="contact-item">
