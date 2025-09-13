@@ -8,7 +8,7 @@
 // import About from "./components/About";
 // import Location from "./components/Location";
 // import Contact from "./components/Contact/Contact";
-// // import Faq from "./components/Faq";
+
 // // Sidebar & Footer
 // import SocialSidebar from "./components/SocialSidebar";
 // import Footer from "./components/Footer/Footer";
@@ -20,16 +20,37 @@
 // // Icons
 // import { FaArrowUp } from "react-icons/fa";
 
-// // ✅ Router import
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// // Router
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   useLocation,
+// } from "react-router-dom";
 
-// // ✅ Service detail pages
-// import TestResults from "./components/services/pages/Research";
-// import LabExperts from "./components/services/pages/Computational";
-// import Technology from "./components/services/pages/Testing";
-// import Turnaround from "./components/services/pages/DataAnalysis";
-// import Analysis from "./components/services/pages/Publication";
-// import Trusted from "./components/services/pages/Process";
+// // Services detail pages
+// import Research from "./components/services/pages/Research";
+// import Computational from "./components/services/pages/Computational";
+// import Testing from "./components/services/pages/Testing";
+// import DataAnalysis from "./components/services/pages/DataAnalysis";
+// import Publication from "./components/services/pages/Publication";
+// import Process from "./components/services/pages/Process";
+// import ExtendedProcess from "./components/services/pages/ExtendedProcess";
+
+// // ✅ Hook for scrolling to hash
+// function ScrollToHash() {
+//   const location = useLocation();
+//   useEffect(() => {
+//     if (location.hash) {
+//       const id = location.hash.replace("#", "");
+//       const element = document.getElementById(id);
+//       if (element) {
+//         element.scrollIntoView({ behavior: "smooth", block: "start" });
+//       }
+//     }
+//   }, [location]);
+//   return null;
+// }
 
 // function App() {
 //   const [showScroll, setShowScroll] = useState(false);
@@ -55,6 +76,9 @@
 
 //   return (
 //     <Router>
+//       {/* ✅ Scroll Hook */}
+//       <ScrollToHash />
+
 //       {/* ✅ AI Assistant */}
 //       <Assistant />
 
@@ -62,44 +86,25 @@
 //       <Navbar />
 
 //       <Routes>
-//         {/* ✅ Home page (single page layout) */}
+//         {/* ✅ Home page */}
 //         <Route
 //           path="/"
 //           element={
 //             <>
 //               <main>
-//                 <section id="home" className="full-height" data-aos="fade-up">
+//                 <section id="home" data-aos="fade-up">
 //                   <Home />
 //                 </section>
-//                 <section
-//                   id="about"
-//                   className="normal-section"
-//                   data-aos="fade-right"
-//                 >
+//                 <section id="about" data-aos="fade-right">
 //                   <About />
 //                 </section>
-//                 <section
-//                   id="services"
-//                   className="normal-section"
-//                   data-aos="fade-left"
-//                 >
+//                 <section id="services" data-aos="fade-left">
 //                   <Services />
 //                 </section>
-//                 <section
-//                   id="contact"
-//                   className="normal-section"
-//                   data-aos="fade-right"
-//                 >
+//                 <section id="contact" data-aos="fade-right">
 //                   <Contact />
 //                 </section>
-//                 {/* <section id="faq" className="normal-section" data-aos="fade-left">
-//                   <Faq />
-//                 </section> */}
-//                 <section
-//                   id="location"
-//                   className="normal-section"
-//                   data-aos="fade-right"
-//                 >
+//                 <section id="location" data-aos="fade-left">
 //                   <Location />
 //                 </section>
 //               </main>
@@ -111,65 +116,68 @@
 //           }
 //         />
 
-//         {/* ✅ Services detail pages with Sidebar & Footer */}
+//         {/* ✅ Services detail pages with padding fix */}
 //         <Route
-//           path="/services/test-results"
+//           path="/services/research"
 //           element={
-//             <>
-//               <TestResults />
-//               {/* <SocialSidebar />
-//               <Footer /> */}
-//             </>
+//             <div className="page-wrapper">
+//               <Research />
+//               <Footer />
+//             </div>
 //           }
 //         />
 //         <Route
-//           path="/services/lab-experts"
+//           path="/services/computational"
 //           element={
-//             <>
-//               <LabExperts />
-//               {/* <SocialSidebar />
-//               <Footer /> */}
-//             </>
+//             <div className="page-wrapper">
+//               <Computational />
+//               <Footer />
+//             </div>
 //           }
 //         />
 //         <Route
-//           path="/services/technology"
+//           path="/services/testing"
 //           element={
-//             <>
-//               <Technology />
-//               {/* <SocialSidebar />
-//               <Footer /> */}
-//             </>
+//             <div className="page-wrapper">
+//               <Testing />
+//               <Footer />
+//             </div>
 //           }
 //         />
 //         <Route
-//           path="/services/turnaround"
+//           path="/services/data-analysis"
 //           element={
-//             <>
-//               <Turnaround />
-//               {/* <SocialSidebar />
-//               <Footer /> */}
-//             </>
+//             <div className="page-wrapper">
+//               <DataAnalysis />
+//               <Footer />
+//             </div>
 //           }
 //         />
 //         <Route
-//           path="/services/analysis"
+//           path="/services/publication"
 //           element={
-//             <>
-//               <Analysis />
-//               {/* <SocialSidebar />
-//               <Footer /> */}
-//             </>
+//             <div className="page-wrapper">
+//               <Publication />
+//               <Footer />
+//             </div>
 //           }
 //         />
 //         <Route
-//           path="/services/trusted"
+//           path="/services/process"
 //           element={
-//             <>
-//               <Trusted />
-//               {/* <SocialSidebar />
-//               <Footer /> */}
-//             </>
+//             <div className="page-wrapper">
+//               <Process />
+//               <Footer />
+//             </div>
+//           }
+//         />
+//         <Route
+//           path="/services/extended-process"
+//           element={
+//             <div className="page-wrapper">
+//               <ExtendedProcess />
+//               <Footer />
+//             </div>
 //           }
 //         />
 //       </Routes>
@@ -181,7 +189,6 @@
 //         </div>
 //       )}
 
-//       {/* ✅ Custom Styles */}
 //       <style>{`
 //         .scroll-to-top {
 //           position: fixed;
@@ -203,12 +210,17 @@
 //           background: linear-gradient(135deg, #24B7D3, #30EFAD);
 //           transform: scale(1.1) rotate(5deg);
 //         }
+//         /* ✅ Services pages padding fix */
+//         .page-wrapper {
+//           padding-top: 100px; /* Navbar height ke hisaab se adjust karo */
+//         }
 //       `}</style>
 //     </Router>
 //   );
 // }
 
 // export default App;
+
 import React, { useEffect, useState } from "react";
 import Assistant from "./components/Assistant/Assistant";
 import Navbar from "./components/Navbar";
@@ -401,6 +413,21 @@ function App() {
       )}
 
       <style>{`
+        /* ✅ Global Fix */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        html, body {
+          width: 100%;
+          overflow-x: hidden; /* 🔥 Side space hata dega */
+        }
+        main, section, .page-wrapper {
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+
         .scroll-to-top {
           position: fixed;
           bottom: 20px;
@@ -421,9 +448,16 @@ function App() {
           background: linear-gradient(135deg, #24B7D3, #30EFAD);
           transform: scale(1.1) rotate(5deg);
         }
+
         /* ✅ Services pages padding fix */
         .page-wrapper {
           padding-top: 100px; /* Navbar height ke hisaab se adjust karo */
+        }
+
+        /* ✅ AOS side overflow fix */
+        [data-aos="fade-left"],
+        [data-aos="fade-right"] {
+          overflow-x: hidden;
         }
       `}</style>
     </Router>
