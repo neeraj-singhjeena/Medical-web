@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaWhatsapp, FaFacebookF, FaLinkedinIn, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 
 function SocialSidebar() {
   const [open, setOpen] = useState(false);
@@ -78,7 +84,7 @@ function SocialSidebar() {
               <FaFacebookF size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/spectracore-analytics/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-mobile linkedin"
