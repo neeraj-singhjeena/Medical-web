@@ -117,7 +117,7 @@ const Footer = () => {
                 <p className="footer-description">
                   Advanced analytical solutions for chemical innovation and research excellence.
                 </p>
-                <img src="../src/assets/images/msme.png" alt="MSME Registered" className="msme-logo" />
+                <div><img src="../src/assets/images/msme.png" alt="MSME Registered" className="msme-logo" /></div>
                 <div>UDYAM Registration: <b>UDYAM-UP-43-0156548</b>
 
                 </div>
