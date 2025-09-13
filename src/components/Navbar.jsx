@@ -356,13 +356,13 @@ function Navbar() {
   useEffect(() => {
     const handleShow = () => setMenuOpen(true);
     const handleHide = () => setMenuOpen(false);
-    
+
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileMenu) {
       mobileMenu.addEventListener('show.bs.offcanvas', handleShow);
       mobileMenu.addEventListener('hide.bs.offcanvas', handleHide);
     }
-    
+
     return () => {
       if (mobileMenu) {
         mobileMenu.removeEventListener('show.bs.offcanvas', handleShow);
@@ -396,10 +396,10 @@ function Navbar() {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-  
-  // Create WhatsApp message with proper formatting
-  const message = `New Appointment Request:%0A%0A
+    e.preventDefault();
+
+    // Create WhatsApp message with proper formatting
+    const message = `New Appointment Request:%0A%0A
 *Name:* ${formData.name}%0A
 *Email:* ${formData.email}%0A
 *Phone:* ${formData.phone}%0A
@@ -408,40 +408,39 @@ function Navbar() {
 *Preferred Time:* ${formData.time}%0A
 *Message:* ${formData.message || 'No additional message provided'}`;
 
-  // Open WhatsApp with pre-filled message
-  window.open(`https://wa.me/917696875238?text=${encodeURIComponent(message)}`, '_blank');
-  
-  // Reset form and show success message
-  setFormData({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    time: "",
-    message: ""
-  });
-  
-  setSubmitted(true);
-  
-  // Hide success message after 5 seconds
-  setTimeout(() => {
-    setSubmitted(false);
-    // Close modal
-    const modal = document.getElementById('appointmentModal');
-    const modalInstance = bootstrap.Modal.getInstance(modal);
-    if (modalInstance) {
-      modalInstance.hide();
-    }
-  }, 5000);
-};
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/919910127966?text=${encodeURIComponent(message)}`, '_blank');
+
+    // Reset form and show success message
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      date: "",
+      time: "",
+      message: ""
+    });
+
+    setSubmitted(true);
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setSubmitted(false);
+      // Close modal
+      const modal = document.getElementById('appointmentModal');
+      const modalInstance = bootstrap.Modal.getInstance(modal);
+      if (modalInstance) {
+        modalInstance.hide();
+      }
+    }, 5000);
+  };
 
   return (
     <>
       <nav
-        className={`navbar navbar-expand-md fixed-top ${
-          scrolled ? "navbar-colored shadow-sm" : "navbar-transparent"
-        }`}
+        className={`navbar navbar-expand-md fixed-top ${scrolled ? "navbar-colored shadow-sm" : "navbar-transparent"
+          }`}
       >
         <div className="container-fluid d-flex align-items-center justify-content-between px-3 px-md-4">
           {/* Brand Name */}
@@ -613,7 +612,7 @@ function Navbar() {
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Service *</label>
-                    <select 
+                    <select
                       className="form-select"
                       name="service"
                       value={formData.service}
@@ -628,9 +627,9 @@ function Navbar() {
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Preferred Date *</label>
-                    <input 
-                      type="date" 
-                      className="form-control" 
+                    <input
+                      type="date"
+                      className="form-control"
                       name="date"
                       value={formData.date}
                       onChange={handleInputChange}
@@ -639,9 +638,9 @@ function Navbar() {
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Preferred Time *</label>
-                    <input 
-                      type="time" 
-                      className="form-control" 
+                    <input
+                      type="time"
+                      className="form-control"
                       name="time"
                       value={formData.time}
                       onChange={handleInputChange}

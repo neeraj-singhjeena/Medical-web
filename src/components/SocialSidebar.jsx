@@ -20,7 +20,7 @@ function SocialSidebar() {
         <ul className="list-unstyled m-0 p-0 d-flex flex-column gap-3">
           <li className="social-item">
             <a
-              href="https://wa.me/919815723616"
+              href="https://wa.me/919910127966"
               target="_blank"
               rel="noopener noreferrer"
               className="social-hover whatsapp"
