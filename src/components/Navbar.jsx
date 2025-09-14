@@ -321,7 +321,7 @@ function Navbar() {
     service: "",
     date: "",
     time: "",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
@@ -334,7 +334,7 @@ function Navbar() {
     "Computational Chemistry & Modeling",
     "Process & Scale-Up Solutions",
     "Data Analysis & Visualization",
-    "Publication & Reporting Support"
+    "Publication & Reporting Support",
   ];
 
   // Scroll effect
@@ -357,16 +357,16 @@ function Navbar() {
     const handleShow = () => setMenuOpen(true);
     const handleHide = () => setMenuOpen(false);
 
-    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenu = document.getElementById("mobileMenu");
     if (mobileMenu) {
-      mobileMenu.addEventListener('show.bs.offcanvas', handleShow);
-      mobileMenu.addEventListener('hide.bs.offcanvas', handleHide);
+      mobileMenu.addEventListener("show.bs.offcanvas", handleShow);
+      mobileMenu.addEventListener("hide.bs.offcanvas", handleHide);
     }
 
     return () => {
       if (mobileMenu) {
-        mobileMenu.removeEventListener('show.bs.offcanvas', handleShow);
-        mobileMenu.removeEventListener('hide.bs.offcanvas', handleHide);
+        mobileMenu.removeEventListener("show.bs.offcanvas", handleShow);
+        mobileMenu.removeEventListener("hide.bs.offcanvas", handleHide);
       }
     };
   }, []);
@@ -391,7 +391,7 @@ function Navbar() {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -406,10 +406,13 @@ function Navbar() {
 *Service:* ${formData.service}%0A
 *Preferred Date:* ${formData.date}%0A
 *Preferred Time:* ${formData.time}%0A
-*Message:* ${formData.message || 'No additional message provided'}`;
+*Message:* ${formData.message || "No additional message provided"}`;
 
     // Open WhatsApp with pre-filled message
-    window.open(`https://wa.me/919910127966?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(
+      `https://wa.me/919910127966?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
 
     // Reset form and show success message
     setFormData({
@@ -419,7 +422,7 @@ function Navbar() {
       service: "",
       date: "",
       time: "",
-      message: ""
+      message: "",
     });
 
     setSubmitted(true);
@@ -428,8 +431,10 @@ function Navbar() {
     setTimeout(() => {
       setSubmitted(false);
       // Close modal
-      const modal = document.getElementById('appointmentModal');
-      const modalInstance = bootstrap.Modal.getInstance(modal);
+      const modal = document.getElementById("appointmentModal");
+      const modalInstance = window.bootstrap?.Modal?.getInstance
+        ? window.bootstrap.Modal.getInstance(modal)
+        : null;
       if (modalInstance) {
         modalInstance.hide();
       }
@@ -439,8 +444,9 @@ function Navbar() {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-md fixed-top ${scrolled ? "navbar-colored shadow-sm" : "navbar-transparent"
-          }`}
+        className={`navbar navbar-expand-md fixed-top ${
+          scrolled ? "navbar-colored shadow-sm" : "navbar-transparent"
+        }`}
       >
         <div className="container-fluid d-flex align-items-center justify-content-between px-3 px-md-4">
           {/* Brand Name */}
@@ -451,7 +457,9 @@ function Navbar() {
 
           {/* Mobile toggle with animated hamburger */}
           <button
-            className={`navbar-toggler custom-toggler ${menuOpen ? "open" : ""}`}
+            className={`navbar-toggler custom-toggler ${
+              menuOpen ? "open" : ""
+            }`}
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#mobileMenu"
@@ -570,7 +578,8 @@ function Navbar() {
               {submitted ? (
                 <div className="alert alert-success text-center" role="alert">
                   <i className="fas fa-check-circle me-2"></i>
-                  Thank you for your appointment request! We'll contact you shortly.
+                  Thank you for your appointment request! We'll contact you
+                  shortly.
                 </div>
               ) : (
                 <form className="row g-3" onSubmit={handleSubmit}>
@@ -621,7 +630,9 @@ function Navbar() {
                     >
                       <option value="">Select Service</option>
                       {services.map((service, index) => (
-                        <option key={index} value={service}>{service}</option>
+                        <option key={index} value={service}>
+                          {service}
+                        </option>
                       ))}
                     </select>
                   </div>
