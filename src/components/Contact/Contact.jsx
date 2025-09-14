@@ -15,8 +15,8 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_i333sph", "template_pb4hbyk", form.current, {
-        publicKey: "FXZ9pkNkJxj6TGcv7",
+      .sendForm("service_juy059d", "template_dkpv3fn", form.current, {
+        publicKey: "9rx5pprtiHVXkW5JB",
       })
       .then(
         () => {
@@ -112,7 +112,8 @@ function Contact() {
                 Contact Us
               </h4>
               <p className="fw-bold mb-4" style={{ color: "black" }}>
-                If You Don't Find Any Relevent Question/Answer Fill Free To Contact Us
+                If You Don't Find Any Relevant Question/Answer Feel Free To
+                Contact Us
               </p>
               <form ref={form} onSubmit={sendEmail}>
                 <div className="mb-3">
