@@ -3,9 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // ✅ Import images
-import img1 from "../assets/images/about.jpg";
 import img2 from "../assets/images/medium-shot-woman-holding-tube.jpg";
-import img3 from "../assets/images/About1.jpg";
 import doctorImg from "../assets/images/img.png";
 
 function About() {
@@ -13,107 +11,96 @@ function About() {
     AOS.init({ duration: 1000, once: false });
   }, []);
 
-  // ✅ Outer hexagon
-  const hexStyleOuter = (rotate = 0) => ({
-    clipPath:
-      "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
-    width: "clamp(140px, 20vw, 200px)",
-    height: "clamp(160px, 24vw, 220px)",
-    background: "linear-gradient(135deg, #24B7D3, #30EFAD)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    boxShadow: "0 10px 18px rgba(0,0,0,0.2)",
-    transition: "all 0.4s ease",
-    cursor: "pointer",
-    position: "relative",
-    transform: `rotate(${rotate}deg)`,
-  });
-
-  // ✅ Inner hexagon (image inside)
-  const hexStyleInner = (src, rotate = 0, isGirl = false) => ({
-    clipPath:
-      "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
-    width: "85%",
-    height: "85%",
-    backgroundImage: `url(${src})`,
-    backgroundSize: "cover",
-    backgroundPosition: isGirl ? "top center" : "center",
-    transition: "all 0.4s ease",
-    transform: `rotate(-${rotate}deg)`,
-  });
+  // ✅ CSS Objects
+  const styles = {
+    section: {
+      padding: "60px 20px",
+      backgroundColor: "#fff",
+      fontFamily: "Arial, sans-serif",
+    },
+    imgWrapper: {
+      position: "relative",
+      overflow: "hidden",
+      borderRadius: "20px",
+      boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+      marginRight: "30px", // ✅ gap between left & right
+    },
+    image: {
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      transition: "transform 0.5s ease",
+    },
+    subtitle: {
+      color: "#2AD2C1",
+      fontWeight: "bold",
+      textTransform: "uppercase",
+      marginBottom: "10px",
+    },
+    title: {
+      fontWeight: "700",
+      marginBottom: "15px",
+      lineHeight: "1.3",
+    },
+    highlight: {
+      color: "#00FB8A",
+    },
+    text: {
+      color: "#666",
+      lineHeight: "1.6",
+    },
+    checkmark: {
+      color: "#00FB8A",
+      fontSize: "20px",
+      marginRight: "8px",
+    },
+    serviceItem: {
+      color: "#555",
+    },
+    doctorImg: {
+      width: "60px",
+      height: "60px",
+      borderRadius: "50%",
+      objectFit: "cover",
+    },
+  };
 
   return (
-    <section className="py-5" style={{ backgroundColor: "#fff" }}>
+    <section style={styles.section}>
       <div className="container">
         <div className="row align-items-center">
-          {/* ✅ Left Side (Hexagon Images) */}
-          <div className="col-lg-6 mb-4 mb-lg-0 d-flex flex-wrap justify-content-center gap-4">
-            {/* Top Left Hexagon */}
+          {/* ✅ Left Side (Single Image) */}
+          <div className="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
             <div
-              style={hexStyleOuter(0)}
-              data-aos="zoom-in"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform =
-                  "translateY(-12px) scale(1.05)";
-                e.currentTarget.style.boxShadow =
-                  "0 18px 35px rgba(0,0,0,0.3), 0 8px 20px rgba(36,183,211,0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "rotate(0deg)";
-                e.currentTarget.style.boxShadow = "0 10px 18px rgba(0,0,0,0.2)";
-              }}
+              style={styles.imgWrapper}
+              onMouseEnter={(e) =>
+                (e.currentTarget.querySelector("img").style.transform =
+                  "scale(1.08)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.querySelector("img").style.transform =
+                  "scale(1)")
+              }
             >
-              <div style={hexStyleInner(img1, 0)}></div>
-            </div>
-
-            {/* Top Right Hexagon (girl image) */}
-            <div
-              style={hexStyleOuter(0)}
-              data-aos="zoom-in"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform =
-                  "translateY(-12px) scale(1.05)";
-                e.currentTarget.style.boxShadow =
-                  "0 18px 35px rgba(0,0,0,0.3), 0 8px 20px rgba(36,183,211,0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "rotate(0deg)";
-                e.currentTarget.style.boxShadow = "0 10px 18px rgba(0,0,0,0.2)";
-              }}
-            >
-              <div style={hexStyleInner(img2, 0, true)}></div>
-            </div>
-
-            {/* Bottom Hexagon (rotated) */}
-            <div
-              style={hexStyleOuter(90)}
-              data-aos="zoom-in"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform =
-                  "rotate(90deg) translateY(-12px) scale(1.05)";
-                e.currentTarget.style.boxShadow =
-                  "0 18px 35px rgba(0,0,0,0.3), 0 8px 20px rgba(36,183,211,0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "rotate(90deg)";
-                e.currentTarget.style.boxShadow = "0 10px 18px rgba(0,0,0,0.2)";
-              }}
-            >
-              <div style={hexStyleInner(img3, 90)}></div>
+              <img src={img2} alt="Lab Professional" style={styles.image} />
             </div>
           </div>
 
           {/* ✅ Right Side (Content) */}
-          <div className="col-lg-6" data-aos="fade-left">
-            <h6 className="fw-bold text-uppercase" style={{ color: "#2AD2C1" }}>
-              About Us
-            </h6>
-            <h2 className="fw-bold mb-3">
-              Experiment With The Best{" "}
-              <span style={{ color: "#00FB8A" }}>Lab Test And Service</span>
+          <div
+            className="col-lg-6"
+            data-aos="fade-left"
+            style={{ paddingLeft: "20px" }}
+          >
+            <h6 style={styles.subtitle}>About Us</h6>
+
+            {/* 🔹 Updated Heading */}
+            <h2 style={styles.title}>
+              Trusted Partner In{" "}
+              <span style={styles.highlight}>Testing, Research & Scale-Up</span>
             </h2>
-            <p className="text-muted">
+
+            <p style={styles.text}>
               SpectraCore Analytics is committed to delivering world-class,
               end-to-end solutions in research consulting, analytical testing,
               computational modeling, and process scale-up to accelerate
@@ -132,16 +119,8 @@ function About() {
                   key={i}
                   className="col-sm-6 mb-2 d-flex align-items-center"
                 >
-                  <span
-                    style={{
-                      color: "#00FB8A",
-                      fontSize: "20px",
-                      marginRight: "8px",
-                    }}
-                  >
-                    ✓
-                  </span>
-                  <span className="text-muted">{item}</span>
+                  <span style={styles.checkmark}>✓</span>
+                  <span style={styles.serviceItem}>{item}</span>
                 </div>
               ))}
             </div>
@@ -151,12 +130,12 @@ function About() {
               <img
                 src={doctorImg}
                 alt="Doctor"
-                className="rounded-circle me-3"
-                style={{ width: "60px", height: "60px", objectFit: "cover" }}
+                style={styles.doctorImg}
+                className="me-3"
               />
               <div>
                 <h6 className="fw-bold mb-0">Dr. Tanu Mittal</h6>
-                <p className="text-muted small mb-0"></p>
+                <p className="text-muted small mb-0">CEO & Founder</p>
               </div>
             </div>
           </div>
