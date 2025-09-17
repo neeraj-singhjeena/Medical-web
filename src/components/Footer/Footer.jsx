@@ -195,7 +195,11 @@ const Footer = () => {
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-envelope"></i>
+<<<<<<< HEAD
                   <span> Info@spectracoreAnalytics.in</span>
+=======
+                  <span>info@spectracoreanalytics.in</span>
+>>>>>>> 9f32e010bfefb4cfa2a9043fd8dac796f2942ba2
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-clock"></i>
