@@ -3,9 +3,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // ✅ Import images
-import img1 from "../assets/images/OIP-removebg-preview.png";
+import img1 from "../assets/images/about.jpg";
 import img2 from "../assets/images/medium-shot-woman-holding-tube.jpg";
-import img3 from "../assets/images/2a125c7aa0d47538b857291fa0901286-removebg-preview.png";
+import img3 from "../assets/images/About1.jpg";
 import doctorImg from "../assets/images/img.png";
 
 function About() {
