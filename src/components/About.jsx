@@ -23,7 +23,7 @@ function About() {
       overflow: "hidden",
       borderRadius: "20px",
       boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-      marginRight: "30px", // ✅ gap between left & right
+      marginRight: "30px",
     },
     image: {
       width: "100%",
@@ -48,6 +48,7 @@ function About() {
     text: {
       color: "#666",
       lineHeight: "1.6",
+      marginBottom: "15px",
     },
     checkmark: {
       color: "#00FB8A",
@@ -96,24 +97,34 @@ function About() {
 
             {/* 🔹 Updated Heading */}
             <h2 style={styles.title}>
-              Trusted Partner In{" "}
-              <span style={styles.highlight}>Testing, Research & Scale-Up</span>
+              Your Trusted Partner for{" "}
+              <span style={styles.highlight}>Chemistry-Driven Innovation</span>
             </h2>
 
+            {/* 🔹 Updated Text */}
+
             <p style={styles.text}>
-              SpectraCore Analytics is committed to delivering world-class,
-              end-to-end solutions in research consulting, analytical testing,
-              computational modeling, and process scale-up to accelerate
-              innovation from lab to plant.
+              Founded by Dr. Tanu Mittal (Ph.D., Chemistry), our team delivers
+              expertise in materials development, analytical testing,
+              computational modeling, process scale-up, and scientific writing.
+              With access to state-of-the-art labs and modern digital tools, we
+              provide accurate insights, scalable solutions, and
+              publication-ready outputs.
+            </p>
+            <p style={styles.text}>
+              From polymers and coatings to pharmaceuticals, energy,
+              environment, and food, we support clients across diverse sectors.
+              Guided by our values—integrity, scientific rigor, and
+              sustainability—we transform ideas into impactful results.
             </p>
 
-            {/* ✅ Service List */}
+            {/* ✅ Updated Service List */}
             <div className="row mt-3">
               {[
-                "Toxicological assessment",
-                "Basic Pathology Testing",
-                "Diagnostic research Facility",
-                "Biological evaluation",
+                "Materials Development",
+                "Analytical Testing",
+                "Computational Modeling",
+                "Process Scale-Up & Scientific Writing",
               ].map((item, i) => (
                 <div
                   key={i}
