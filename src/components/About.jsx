@@ -156,7 +156,7 @@ function About() {
               />
               <div>
                 <h6 className="fw-bold mb-0">Dr. Tanu Mittal</h6>
-                <p className="text-muted small mb-0">Laboratory Specialist</p>
+                <p className="text-muted small mb-0"></p>
               </div>
             </div>
           </div>
