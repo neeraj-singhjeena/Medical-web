@@ -106,6 +106,7 @@ const Footer = () => {
       <div className="footer-main">
         <div className="container">
           <div className="footer-content">
+            {/* Brand Section */}
             <div className="footer-section">
               <div className="footer-brand">
                 <div className="footer-logo">
@@ -125,7 +126,7 @@ const Footer = () => {
                     alt="MSME"
                     src="../src/assets/images/msme.png"
                     className="msme-logo"
-                  />{" "}
+                  />
                 </div>
                 <div>
                   UDYAM Registration: <b>UDYAM-UP-43-0156548</b>
@@ -133,6 +134,7 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Services Section */}
             <div className="footer-section">
               <h4>Our Services</h4>
               <ul className="footer-links">
@@ -154,6 +156,7 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Quick Links */}
             <div className="footer-section">
               <h4>Quick Links</h4>
               <ul className="footer-links">
@@ -175,17 +178,17 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Contact Info */}
             <div className="footer-section">
               <h4>Contact Info</h4>
               <div className="contact-info">
                 <div className="contact-item">
                   <i className="fas fa-map-marker-alt"></i>
-
                   <div>
-                    <strong>Dr .Tanu Mittal</strong>
+                    <strong>Dr. Tanu Mittal</strong>
                     <p>
-                      Main Unit H2, Old SBRA,Indian Institute of Technology
-                      Kanpur Kanpur, Uttar Pradesh 208016 India .
+                      Main Unit H2, Old SBRA, Indian Institute of Technology
+                      Kanpur, Uttar Pradesh 208016, India.
                     </p>
                   </div>
                 </div>
@@ -195,11 +198,7 @@ const Footer = () => {
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-envelope"></i>
-<<<<<<< HEAD
-                  <span> Info@spectracoreAnalytics.in</span>
-=======
                   <span>info@spectracoreanalytics.in</span>
->>>>>>> 9f32e010bfefb4cfa2a9043fd8dac796f2942ba2
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-clock"></i>
