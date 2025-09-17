@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import img1 from "../assets/images/OIP-removebg-preview.png";
 import img2 from "../assets/images/medium-shot-woman-holding-tube.jpg";
 import img3 from "../assets/images/2a125c7aa0d47538b857291fa0901286-removebg-preview.png";
-import doctorImg from "../assets/images/doctor.png";
+import doctorImg from "../assets/images/img.png";
 
 function About() {
   useEffect(() => {
@@ -114,7 +114,10 @@ function About() {
               <span style={{ color: "#00FB8A" }}>Lab Test And Service</span>
             </h2>
             <p className="text-muted">
-              SpectraCore Analytics is committed to delivering world-class, end-to-end solutions in research consulting, analytical testing, computational modeling, and process scale-up to accelerate innovation from lab to plant.
+              SpectraCore Analytics is committed to delivering world-class,
+              end-to-end solutions in research consulting, analytical testing,
+              computational modeling, and process scale-up to accelerate
+              innovation from lab to plant.
             </p>
 
             {/* ✅ Service List */}

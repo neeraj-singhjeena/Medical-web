@@ -38,7 +38,7 @@ function Location() {
               📍 <strong>Office Address:</strong> H2, Old SBRA, Indian Institute
               of Technology, Kanpur 208016
               <br />
-              📧 <strong>Email:</strong> Info@spectracoreAnalytics.com
+              📧 <strong>Email:</strong> Info@spectracoreAnalytics.in
               <br />
               ☎️ <strong>Phone:</strong> +91 9910127966
             </p>
