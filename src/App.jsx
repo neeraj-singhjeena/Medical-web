@@ -8,7 +8,7 @@ import Services from "./components/services/Services";
 import About from "./components/About";
 import Location from "./components/Location";
 import Contact from "./components/Contact/Contact";
-
+import Testimonials from "./components/Testimonials";
 // Sidebar & Footer
 import SocialSidebar from "./components/SocialSidebar";
 import Footer from "./components/Footer/Footer";
@@ -97,6 +97,9 @@ function App() {
                 </section>
                 <section id="about" data-aos="fade-right">
                   <About />
+                </section>
+                <section id="about" data-aos="fade-right">
+                  <Testimonials />
                 </section>
                 <section id="services" data-aos="fade-left">
                   <Services />

@@ -420,7 +420,7 @@ function Navbar() {
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
           }
           .modal-title-teal { color: #2AD2C1 !important; }
-          .custom-toggler { 
+          .custom-toggler {
             border: none;
             background: transparent !important;
             width: 30px;
@@ -457,7 +457,7 @@ function Navbar() {
           .hamburger-inner::after {
             bottom: -10px;
           }
-          
+
           /* Hamburger animation to X when open */
           .custom-toggler.open .hamburger-inner {
             transform: rotate(45deg);
@@ -472,13 +472,13 @@ function Navbar() {
             transform: rotate(-90deg);
           }
           .text-accent { color: #00FB8A !important; }
-          
+
           /* Form styling */
           .form-label {
             font-weight: 500;
             color: #0b1b36;
           }
-          
+
           .alert-success {
             background: linear-gradient(45deg, #2AD2C1, #30EFAD);
             color: #0b1b36;
