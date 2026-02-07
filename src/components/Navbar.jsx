@@ -103,7 +103,7 @@ function Navbar() {
     // Open WhatsApp with pre-filled message
     window.open(
       `https://wa.me/919910127966?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
     );
 
     // Reset form and show success message
@@ -124,13 +124,13 @@ function Navbar() {
       setSubmitted(false);
       // Close modal
       const modal = document.getElementById("appointmentModal");
-<<<<<<< HEAD
+
       const modalInstance = bootstrap.Modal.getInstance(modal);
-=======
+
       const modalInstance = window.bootstrap?.Modal?.getInstance
         ? window.bootstrap.Modal.getInstance(modal)
         : null;
->>>>>>> a7f11250fd4fa8721cce372c0f6a2afb64d03c7e
+
       if (modalInstance) {
         modalInstance.hide();
       }
