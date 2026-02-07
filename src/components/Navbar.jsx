@@ -125,7 +125,7 @@ function Navbar() {
       // Close modal
       const modal = document.getElementById("appointmentModal");
 
-      const modalInstance = bootstrap.Modal.getInstance(modal);
+      // const modalInstance = bootstrap.Modal.getInstance(modal);
 
       const modalInstance = window.bootstrap?.Modal?.getInstance
         ? window.bootstrap.Modal.getInstance(modal)

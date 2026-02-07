@@ -11,7 +11,7 @@ function Location() {
   const handleGetDirections = () => {
     window.open(
       "https://www.google.com/maps/dir/?api=1&destination=H2,+Old+SBRA,+IIT+Kanpur,+208016",
-      "_blank"
+      "_blank",
     );
   };
 
