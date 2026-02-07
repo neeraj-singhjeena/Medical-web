@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -11,23 +10,23 @@ function Contact() {
     AOS.init({ duration: 1000, once: false });
   }, []);
 
-  const sendEmail = (e) => {
+  const sendWhatsApp = (e) => {
     e.preventDefault();
+    const formData = new FormData(form.current);
+    const name = encodeURIComponent(formData.get("user_name"));
+    const phone = encodeURIComponent(formData.get("user_phone"));
+    const message = encodeURIComponent(formData.get("message"));
 
-    emailjs
-      .sendForm("service_i333sph", "template_pb4hbyk", form.current, {
-        publicKey: "FXZ9pkNkJxj6TGcv7",
-      })
-      .then(
-        () => {
-          alert("✅ Thank you for your feedback!");
-          form.current.reset();
-        },
-        (error) => {
-          console.error(error);
-          alert("❌ Something went wrong. Please try again.");
-        }
-      );
+    // WhatsApp number
+    const whatsappNumber = "919910127966";
+
+    // Construct WhatsApp link
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+
+    // Open WhatsApp
+    window.open(whatsappLink, "_blank");
+
+    form.current.reset();
   };
 
   const faqs = [
@@ -65,7 +64,7 @@ function Contact() {
     >
       <div className="container">
         <div className="row align-items-start">
-          {/* ✅ Left Side FAQ */}
+          {/* FAQ */}
           <div className="col-lg-5 mb-4" data-aos="fade-right">
             <h5 className="fw-bold mb-2" style={{ color: "#2AD2C1" }}>
               FAQ'S
@@ -73,7 +72,6 @@ function Contact() {
             <h2 className="fw-bold mb-4" style={{ color: "#2AD2C1" }}>
               Frequently Asked Questions
             </h2>
-
             <div className="accordion">
               {faqs.map((faq, index) => (
                 <div
@@ -102,7 +100,7 @@ function Contact() {
             </div>
           </div>
 
-          {/* ✅ Right Form */}
+          {/* Contact Form */}
           <div className="col-lg-7" data-aos="fade-left">
             <div
               className="p-4 bg-white rounded shadow-lg"
@@ -112,9 +110,10 @@ function Contact() {
                 Contact Us
               </h4>
               <p className="fw-bold mb-4" style={{ color: "black" }}>
-                If You Don't Find Any Relevent Question/Answer Fill Free To Contact Us
+                If you don't find any relevant question/answer, feel free to
+                contact us.
               </p>
-              <form ref={form} onSubmit={sendEmail}>
+              <form ref={form} onSubmit={sendWhatsApp}>
                 <div className="mb-3">
                   <label
                     className="form-label fw-semibold"
@@ -135,13 +134,13 @@ function Contact() {
                     className="form-label fw-semibold"
                     style={{ color: "#2AD2C1" }}
                   >
-                    Your Email
+                    Your Phone Number
                   </label>
                   <input
-                    type="email"
+                    type="tel"
                     className="form-control"
-                    name="user_email"
-                    placeholder="Enter your email"
+                    name="user_phone"
+                    placeholder="Enter your phone number"
                     required
                   />
                 </div>
@@ -180,29 +179,12 @@ function Contact() {
         </div>
       </div>
 
-      {/* ✅ Extra CSS for responsiveness */}
       <style>{`
-        #contact h2 {
-          font-size: clamp(24px, 3vw, 32px);
-        }
-        #contact p {
-          font-size: clamp(14px, 2vw, 16px);
-        }
-        #contact .form-control {
-          font-size: 14px;
-          padding: 12px;
-          border-radius: 10px;
-          border: 1px solid #2AD2C1;
-        }
-        #contact button:hover {
-          transform: scale(1.03);
-          background: linear-gradient(45deg, #30EFAD, #24B7D3);
-        }
-        #contact .form-label:after {
-          content: "*";
-          color: #00FB8A; /* Accent bright green */
-          margin-left: 4px;
-        }
+        #contact h2 { font-size: clamp(24px, 3vw, 32px); }
+        #contact p { font-size: clamp(14px, 2vw, 16px); }
+        #contact .form-control { font-size: 14px; padding: 12px; border-radius: 10px; border: 1px solid #2AD2C1; }
+        #contact button:hover { transform: scale(1.03); background: linear-gradient(45deg, #30EFAD, #24B7D3); }
+        #contact .form-label:after { content: "*"; color: #00FB8A; margin-left: 4px; }
       `}</style>
     </section>
   );

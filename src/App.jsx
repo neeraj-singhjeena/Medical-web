@@ -8,7 +8,11 @@ import Services from "./components/services/Services";
 import About from "./components/About";
 import Location from "./components/Location";
 import Contact from "./components/Contact/Contact";
+<<<<<<< HEAD
 import Reviews from "./components/Reviews/Reviews";
+=======
+import Testimonials from "./components/Testimonials";
+>>>>>>> a7f11250fd4fa8721cce372c0f6a2afb64d03c7e
 // Sidebar & Footer
 import SocialSidebar from "./components/SocialSidebar";
 import Footer from "./components/Footer/Footer";
@@ -97,6 +101,9 @@ function App() {
                 </section>
                 <section id="about" data-aos="fade-right">
                   <About />
+                </section>
+                <section id="about" data-aos="fade-right">
+                  <Testimonials />
                 </section>
                 <section id="services" data-aos="fade-left">
                   <Services />
