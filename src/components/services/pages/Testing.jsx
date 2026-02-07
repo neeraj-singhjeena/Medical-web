@@ -56,17 +56,17 @@ function Testing() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center top;
-          filter: brightness(70%);
+          object-position: center;
+          filter: brightness(65%);
         }
         .testing-banner .overlay {
           position: absolute;
           inset: 0;
           display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          padding-bottom: 3rem;
-          background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+          align-items: center; /* ✅ center vertically */
+          justify-content: center; /* ✅ center horizontally */
+          padding: 0 1rem;
+          background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
           text-align: center;
         }
         .testing-banner h1 {
@@ -74,6 +74,7 @@ function Testing() {
           font-weight: 700;
           color: #fff;
           margin: 0;
+          line-height: 1.2;
         }
         .testing-page section {
           margin-bottom: 2rem;
@@ -91,8 +92,10 @@ function Testing() {
         .industries {
           background: #f9f9f9;
           padding: 2rem;
-          border-radius: 8px;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
+          
 
         /* ✅ Responsive */
         @media (max-width: 992px) {
@@ -108,10 +111,11 @@ function Testing() {
             height: 40vh;
           }
           .testing-banner h1 {
-            font-size: 1.8rem;
-            padding: 0 1rem;
+            font-size: 1.6rem;
+            padding: 0 0.5rem;
           }
         }
+          
       `}</style>
     </div>
   );

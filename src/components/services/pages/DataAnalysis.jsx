@@ -8,7 +8,7 @@ function DataAnalysis() {
       <div className="dataanalysis-banner">
         <img src={dataAnalysisImg} alt="Data Analysis Banner" />
         <div className="overlay">
-          <h1>Machine Learning Applications</h1>
+          <h1>E. Machine Learning Applications</h1>
         </div>
       </div>
 

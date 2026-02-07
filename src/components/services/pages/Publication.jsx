@@ -53,17 +53,17 @@ function Publication() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center top;
-          filter: brightness(70%);
+          object-position: center;
+          filter: brightness(65%);
         }
         .publication-banner .overlay {
           position: absolute;
           inset: 0;
           display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          padding-bottom: 3rem;
-          background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+          align-items: center; /* ✅ vertically center */
+          justify-content: center; /* ✅ horizontally center */
+          padding: 0 1rem;
+          background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
           text-align: center;
         }
         .publication-banner h1 {
@@ -71,6 +71,7 @@ function Publication() {
           font-weight: 700;
           color: #fff;
           margin: 0;
+          line-height: 1.2;
         }
         .publication-page section {
           margin-bottom: 2rem;
@@ -88,7 +89,8 @@ function Publication() {
         .industries {
           background: #f9f9f9;
           padding: 2rem;
-          border-radius: 8px;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         /* ✅ Responsive */
@@ -105,8 +107,8 @@ function Publication() {
             height: 40vh;
           }
           .publication-banner h1 {
-            font-size: 1.8rem;
-            padding: 0 1rem;
+            font-size: 1.6rem;
+            padding: 0 0.5rem;
           }
         }
       `}</style>

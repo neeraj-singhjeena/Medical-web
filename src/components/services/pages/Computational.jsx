@@ -8,7 +8,7 @@ function Computational() {
       <div className="computational-banner">
         <img src={computationalImg} alt="Computational Chemistry Banner" />
         <div className="overlay">
-          <h1>Computational Chemistry & Modeling</h1>
+          <h1>C. Computational Chemistry & Modeling</h1>
         </div>
       </div>
 
@@ -35,7 +35,8 @@ function Computational() {
           <p>
             Our computational services support Pharmaceuticals, Biotech,
             Chemicals, Polymers, Nanotechnology, Energy Materials, and Academic
-            R&D—delivering predictive insights and reducing experimental costs.
+            R&D — delivering predictive insights and reducing experimental
+            costs.
           </p>
         </section>
       </div>

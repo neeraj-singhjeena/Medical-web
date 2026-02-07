@@ -13,38 +13,45 @@ function Research() {
       </div>
 
       {/* ✅ Main Content */}
-      <div className="container py-5">
-        <section>
-          <h2>A. Research & Consulting</h2>
-          <p>
-            We specialize in innovative materials development including
-            nanomaterials, polymers, surface coatings, and composites tailored
-            to meet client needs. Our industrial and applied chemistry expertise
-            helps troubleshoot processes, identify root causes of failures, and
-            improve products for enhanced performance and durability. We provide
-            comprehensive literature landscaping, technology scouting, and
-            patent analysis including freedom-to-operate (FTO) summaries to keep
-            clients ahead of the competition. Experimental design (DoE) and
-            validation studies ensure rigorous methodology and reliable results
-            supporting research and commercial objectives.
-          </p>
-        </section>
+      <div className="container-fluid py-5 px-3">
+        <div className="container">
+          <section>
+            <h2>A. Research & Consulting</h2>
+            <p>
+              We specialize in innovative materials development including
+              nanomaterials, polymers, surface coatings, and composites tailored
+              to meet client needs. Our industrial and applied chemistry
+              expertise helps troubleshoot processes, identify root causes of
+              failures, and improve products for enhanced performance and
+              durability. We provide comprehensive literature landscaping,
+              technology scouting, and patent analysis including
+              freedom-to-operate (FTO) summaries to keep clients ahead of the
+              competition. Experimental design (DoE) and validation studies
+              ensure rigorous methodology and reliable results supporting
+              research and commercial objectives.
+            </p>
+          </section>
 
-        {/* ✅ Industries Served */}
-        <section className="industries py-4">
-          <h2>Industries Served</h2>
-          <p>
-            Our services cater to Chemicals & Specialty Chemicals, Polymers,
-            Paints & Coatings, Pharmaceuticals & Biotech, Energy & Environment
-            sectors including battery materials and water treatment, Food &
-            Agriculture, and Academic & Government research labs requiring
-            project support, advanced analysis, and publication assistance.
-          </p>
-        </section>
+          <section className="industries py-4">
+            <h2>Industries Served</h2>
+            <p>
+              Our services cater to Chemicals & Specialty Chemicals, Polymers,
+              Paints & Coatings, Pharmaceuticals & Biotech, Energy & Environment
+              sectors including battery materials and water treatment, Food &
+              Agriculture, and Academic & Government research labs requiring
+              project support, advanced analysis, and publication assistance.
+            </p>
+          </section>
+        </div>
       </div>
 
       {/* ✅ Styles */}
       <style>{`
+        .research-page {
+          width: 100%;
+          overflow-x: hidden; /* ✅ Prevent extra horizontal scroll */
+        }
+
         .research-banner {
           position: relative;
           width: 100%;
@@ -57,17 +64,17 @@ function Research() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center top;
-          filter: brightness(70%);
+          object-position: center;
+          filter: brightness(65%);
         }
         .research-banner .overlay {
           position: absolute;
           inset: 0;
           display: flex;
-          align-items: flex-end;
+          align-items: center;
           justify-content: center;
-          padding-bottom: 3rem;
-          background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+          padding: 0 1rem;
+          background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
           text-align: center;
         }
         .research-banner h1 {
@@ -75,7 +82,9 @@ function Research() {
           font-weight: 700;
           color: #fff;
           margin: 0;
+          line-height: 1.2;
         }
+
         .research-page section {
           margin-bottom: 2rem;
         }
@@ -89,10 +98,12 @@ function Research() {
           font-size: 1rem;
           color: #444;
         }
+
         .industries {
           background: #f9f9f9;
           padding: 2rem;
-          border-radius: 8px;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         /* ✅ Responsive */
@@ -109,8 +120,8 @@ function Research() {
             height: 40vh;
           }
           .research-banner h1 {
-            font-size: 1.8rem;
-            padding: 0 1rem;
+            font-size: 1.6rem;
+            padding: 0 0.5rem;
           }
         }
       `}</style>
