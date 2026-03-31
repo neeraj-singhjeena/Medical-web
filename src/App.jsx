@@ -8,7 +8,6 @@
 // import About from "./components/About";
 // import Location from "./components/Location";
 // import Contact from "./components/Contact/Contact";
-
 // import Reviews from "./components/Reviews/Reviews";
 // import Testimonials from "./components/Testimonials";
 
@@ -40,9 +39,9 @@
 // import Process from "./components/services/pages/Process";
 // import ExtendedProcess from "./components/services/pages/ExtendedProcess";
 
-// // ✅ Hook for scrolling to hash
 // function ScrollToHash() {
 //   const location = useLocation();
+
 //   useEffect(() => {
 //     if (location.hash) {
 //       const id = location.hash.replace("#", "");
@@ -52,6 +51,7 @@
 //       }
 //     }
 //   }, [location]);
+
 //   return null;
 // }
 
@@ -65,31 +65,25 @@
 //       once: false,
 //     });
 
-//     const handleScroll = () => {
-//       setShowScroll(window.scrollY > 300);
-//     };
-
+//     const handleScroll = () => setShowScroll(window.scrollY > 300);
 //     window.addEventListener("scroll", handleScroll);
+
 //     return () => window.removeEventListener("scroll", handleScroll);
 //   }, []);
 
-//   const scrollToTop = () => {
-//     window.scrollTo({ top: 0, behavior: "smooth" });
-//   };
+//   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 //   return (
 //     <Router>
-//       {/* ✅ Scroll Hook */}
 //       <ScrollToHash />
 
-//       {/* ✅ AI Assistant */}
-//       <Assistant />
+//       {/* Safe Assistant */}
+//       {Assistant && <Assistant />}
 
-//       {/* ✅ Navbar */}
 //       <Navbar />
 
 //       <Routes>
-//         {/* ✅ Home page */}
+//         {/* ===== HOME PAGE ===== */}
 //         <Route
 //           path="/"
 //           element={
@@ -98,34 +92,40 @@
 //                 <section id="home" data-aos="fade-up">
 //                   <Home />
 //                 </section>
+
 //                 <section id="about" data-aos="fade-right">
 //                   <About />
 //                 </section>
-//                 <section id="about" data-aos="fade-right">
+
+//                 {/* ✅ FIXED ID */}
+//                 <section id="testimonials" data-aos="fade-right">
 //                   <Testimonials />
 //                 </section>
+
 //                 <section id="services" data-aos="fade-left">
 //                   <Services />
 //                 </section>
+
 //                 <section id="contact" data-aos="fade-right">
 //                   <Contact />
 //                 </section>
-//                 <section id="reviews" data-aos="fade-right">
+
+//                 <section id="reviews" data-aos="fade-up">
 //                   <Reviews />
 //                 </section>
+
 //                 <section id="location" data-aos="fade-left">
 //                   <Location />
 //                 </section>
 //               </main>
 
-//               {/* ✅ Sidebar & Footer */}
 //               <SocialSidebar />
 //               <Footer />
 //             </>
 //           }
 //         />
 
-//         {/* ✅ Services detail pages with padding fix */}
+//         {/* ===== SERVICES PAGES ===== */}
 //         <Route
 //           path="/services/research"
 //           element={
@@ -191,9 +191,9 @@
 //         />
 //       </Routes>
 
-//       {/* ✅ Scroll-to-Top Button */}
+//       {/* Scroll To Top */}
 //       {showScroll && (
-//         <div className="scroll-to-top" onClick={scrollToTop} data-aos="zoom-in">
+//         <div className="scroll-to-top" onClick={scrollToTop}>
 //           <FaArrowUp />
 //         </div>
 //       )}
@@ -208,20 +208,10 @@
 //           border-radius: 50%;
 //           padding: 12px;
 //           cursor: pointer;
-//           box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-//           transition: transform 0.3s ease, background 0.3s ease;
 //           z-index: 999;
-//           display: flex;
-//           align-items: center;
-//           justify-content: center;
 //         }
-//         .scroll-to-top:hover {
-//           background: linear-gradient(135deg, #24B7D3, #30EFAD);
-//           transform: scale(1.1) rotate(5deg);
-//         }
-//         /* ✅ Services pages padding fix */
 //         .page-wrapper {
-//           padding-top: 100px; /* Navbar height ke hisaab se adjust karo */
+//           padding-top: 100px;
 //         }
 //       `}</style>
 //     </Router>
@@ -241,6 +231,10 @@ import Location from "./components/Location";
 import Contact from "./components/Contact/Contact";
 import Reviews from "./components/Reviews/Reviews";
 import Testimonials from "./components/Testimonials";
+
+// NEW PAGES (Inhe import kiya gaya hai)
+import Work from "./pages/Work";
+import Insights from "./pages/Insights";
 
 // Sidebar & Footer
 import SocialSidebar from "./components/SocialSidebar";
@@ -280,6 +274,9 @@ function ScrollToHash() {
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+    } else {
+      // Naye page pe jaane par scroll hamesha top pe ho jaye
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
 
@@ -328,7 +325,6 @@ function App() {
                   <About />
                 </section>
 
-                {/* ✅ FIXED ID */}
                 <section id="testimonials" data-aos="fade-right">
                   <Testimonials />
                 </section>
@@ -353,6 +349,26 @@ function App() {
               <SocialSidebar />
               <Footer />
             </>
+          }
+        />
+
+        {/* ===== NEW PAGES ROUTES ===== */}
+        <Route
+          path="/work"
+          element={
+            <div className="page-wrapper">
+              <Work />
+              <Footer />
+            </div>
+          }
+        />
+        <Route
+          path="/insights"
+          element={
+            <div className="page-wrapper">
+              <Insights />
+              <Footer />
+            </div>
           }
         />
 
@@ -388,7 +404,9 @@ function App() {
           path="/services/data-analysis"
           element={
             <div className="page-wrapper">
-              <DataAnalysis />
+              <div className="container">
+                <DataAnalysis />
+              </div>
               <Footer />
             </div>
           }
@@ -440,9 +458,16 @@ function App() {
           padding: 12px;
           cursor: pointer;
           z-index: 999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .page-wrapper {
-          padding-top: 100px;
+          padding-top: 100px; /* Navbar height compensation */
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
         }
       `}</style>
     </Router>

@@ -137,7 +137,7 @@ function About() {
             </div>
 
             {/* ✅ Doctor Info */}
-            <div className="d-flex align-items-center mt-4">
+            {/* <div className="d-flex align-items-center mt-4">
               <img
                 src={doctorImg}
                 alt="Doctor"
@@ -148,7 +148,7 @@ function About() {
                 <h6 className="fw-bold mb-0">Dr. Tanu Mittal</h6>
                 <p className="text-muted small mb-0">CEO & Founder</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
